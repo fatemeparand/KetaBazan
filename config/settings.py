@@ -76,11 +76,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'KetaBazan',
+        'USER': 'ketab-baz-user',
+        'PASSWORD': config('DJANGO_KETABAZAN_DB_PASSWORD'),
+        'HOST': 'localhost',
+        'POST': 5432
+
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
