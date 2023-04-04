@@ -39,9 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third_party_apps
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
+
     # my_apps
     'accounts',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,6 +78,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
@@ -133,3 +142,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # user config
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# authentication config
+AUTHENTICATION_BACKENDS = [
+    # authentication with django auth
+    'django.contrib.auth.backends.ModelBackend',
+
+    # authentication with allauth
+    'allauth.account.auth_backends.AuthenticationBackend'
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# allauth config
+
+
+
+# crispy config
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
