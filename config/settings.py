@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     # my_apps
     'accounts',
+    'pages',
 ]
 
 SITE_ID = 1
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,12 +152,16 @@ AUTHENTICATION_BACKENDS = [
     # authentication with allauth
     'allauth.account.auth_backends.AuthenticationBackend'
 ]
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+
+LOGIN_REDIRECT_URL = 'pages:home_page'
+LOGOUT_REDIRECT_URL = 'pages:home_page'
+
 # allauth config
-
-
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
 
 # crispy config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
