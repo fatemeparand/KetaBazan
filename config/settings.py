@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'rosetta',
 
     # my_apps
     'accounts',
@@ -172,6 +173,11 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # i18n config
 LOCALE_PATHS = (
     str(BASE_DIR.joinpath('locale')),
+)
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
 )
 
 
