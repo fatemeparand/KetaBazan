@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-16 11:44+0330\n"
-"PO-Revision-Date: 2023-04-16 11:45+0330\n"
+"POT-Creation-Date: 2023-04-16 15:37+0330\n"
+"PO-Revision-Date: 2023-04-16 15:38+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\bookstore\models.py:7 .\bookstore\models.py:58
+#: .\templates\bookstore\book_list.html:11
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -27,7 +28,6 @@ msgid "biography"
 msgstr "زندگی نامه"
 
 #: .\bookstore\models.py:11
-#| msgid "book author"
 msgid "BookAuthors"
 msgstr "نویسنده کتاب"
 
@@ -36,7 +36,6 @@ msgid "translator name"
 msgstr "مترجم کتاب"
 
 #: .\bookstore\models.py:21
-#| msgid "translator name"
 msgid "BookTranslators"
 msgstr "مترجم کتاب"
 
@@ -49,7 +48,6 @@ msgid "about publisher"
 msgstr "درباره ی ناشر"
 
 #: .\bookstore\models.py:32
-#| msgid "about publisher"
 msgid "BookPublishers"
 msgstr "ناشر کتاب"
 
@@ -58,7 +56,6 @@ msgid "book subject"
 msgstr "موضوع کتاب"
 
 #: .\bookstore\models.py:42
-#| msgid "book subject"
 msgid "Subjects"
 msgstr "موضوع کتاب"
 
@@ -74,9 +71,9 @@ msgstr "موجود"
 msgid "Not Available"
 msgstr "عدم موجودی"
 
-#: .\bookstore\models.py:56
+#: .\bookstore\models.py:56 .\templates\bookstore\book_list.html:10
 msgid "book name"
-msgstr "اسم کتاب"
+msgstr "نام کتاب"
 
 #: .\bookstore\models.py:61
 msgid "publication year"
@@ -239,6 +236,11 @@ msgstr "رمز عبور جدید شما تنظیم شده است."
 #: .\templates\account\password_reset_from_key_done.html:12
 msgid "You can login with your new password now"
 msgstr "اکنون می توانید با رمز عبور جدید خود وارد شوید"
+
+#: .\templates\bookstore\book_list.html:5
+#| msgid "book subject"
+msgid "book lists"
+msgstr "فهرست کتاب ها"
 
 #: .\templates\registration\password_change_done.html:6
 msgid "change password complete"
