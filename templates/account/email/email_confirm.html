@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block page_title %}
-    {% trans 'conrirm email address' %}
+    {% trans 'confirm email address' %}
 {% endblock %}
 
 {% block content %}
-    <h1>{% trans 'confirm email adress' %}</h1>
+    <h1>{% trans 'confirm email address' %}</h1>
     {% if confirmation %}
 
         {% user_display confirmation.email.address.user as user_display %}

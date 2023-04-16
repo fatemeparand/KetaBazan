@@ -8,14 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-05 05:40+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-04-15 16:53+0330\n"
+"PO-Revision-Date: 2023-04-15 16:54+0330\n"
+"Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\templates\_base.html:11
 msgid "logout"
@@ -23,6 +24,7 @@ msgstr "خروج"
 
 #: .\templates\_base.html:13 .\templates\account\login.html:7
 #: .\templates\account\login.html:14
+#: .\templates\account\password_reset_from_key_done.html:12
 msgid "login"
 msgstr "ورود"
 
@@ -30,3 +32,119 @@ msgstr "ورود"
 #: .\templates\account\signup.html:14
 msgid "signup"
 msgstr "ثبت نام"
+
+#: .\templates\account\email\email_confirm.html:5
+#: .\templates\account\email\email_confirm.html:9
+msgid "confirm email address"
+msgstr "تایید آدرس ایمیل"
+
+#: .\templates\account\email\email_confirm.html:13
+#, python-format
+msgid ""
+"\n"
+"            Please confirmation that <a href=\"mailto: %(email)s\">%(email)s</a> is an e_mail address for user %(user_display)s.\n"
+"        "
+msgstr ""
+
+#: .\templates\account\email\email_confirm.html:20
+msgid "confirm"
+msgstr "تایید"
+
+#: .\templates\account\email\email_confirm.html:27
+#, python-format
+msgid ""
+"\n"
+"        This e_mail confirmation link expired or invalid. Please <a href=\"%(email_url)s\">issue a new e_mail confirmation request</a>\n"
+"            "
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_message.txt:7
+#, python-format
+msgid ""
+"\n"
+"\n"
+"hello from site %(site_name)s\n"
+"dear %(user_display)s:\n"
+"If you requested this email, please click on the link bellow:\n"
+"\n"
+"%(activate_url)s\n"
+"\n"
+msgstr ""
+
+#: .\templates\account\email\email_confirmation_subject.txt:4
+msgid ""
+"\n"
+"    please confirm your email\n"
+msgstr ""
+"\n"
+"لطفا ایمیل خود را تایید کنید\n"
+
+#: .\templates\account\password_change.html:7
+#: .\templates\account\password_change.html:14
+#: .\templates\registration\password_change_form.html:7
+msgid "change password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\password_change_done.html:7
+msgid "password changed"
+msgstr "رمز عبور تغییر کرد"
+
+#: .\templates\account\password_change_done.html:11
+msgid "Your password has been successfully changed"
+msgstr "رمز عبور شما با موفقیت تغییر کرد."
+
+#: .\templates\account\password_reset.html:7
+msgid "password reset"
+msgstr "تنظیم مجدد رمز عبور"
+
+#: .\templates\account\password_reset.html:14
+msgid "reset"
+msgstr "تنظیم مجدد"
+
+#: .\templates\account\password_reset_done.html:7
+msgid "password reset done"
+msgstr "بازنشانی رمز عبور"
+
+#: .\templates\account\password_reset_done.html:11
+msgid ""
+"Please Check Your e-mail. We have sent you the password reset instructions."
+msgstr ""
+"لطفا ایمیل خود را چک کنید. ما دستورالعمل های بازنشانی رمز عبور را برای شما "
+"ارسال کرده ایم."
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "new password"
+msgstr "رمز عبور جدید"
+
+#: .\templates\account\password_reset_from_key.html:11
+msgid "set new password please."
+msgstr "لطفا رمز عبور جدید تنظیم کنید"
+
+#: .\templates\account\password_reset_from_key.html:15
+msgid "set"
+msgstr "تنظیم "
+
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "reset compelete"
+msgstr "تکمیل بازنشانی رمز"
+
+#: .\templates\account\password_reset_from_key_done.html:11
+msgid "Your new password has been set"
+msgstr "رمز عبور جدید شما تنظیم شده است."
+
+#: .\templates\account\password_reset_from_key_done.html:12
+msgid "You can login with your new password now"
+msgstr "اکنون می توانید با رمز عبور جدید خود وارد شوید"
+
+#: .\templates\registration\password_change_done.html:6
+#| msgid "change password"
+msgid "change password complete"
+msgstr "تکمیل فرایند تغییر رمز عبور"
+
+#: .\templates\registration\password_change_done.html:10
+msgid "password changed successfully..."
+msgstr "رمز عبور با موفقیت تغییر کرد..."
+
+#: .\templates\registration\password_change_form.html:14
+msgid "change"
+msgstr "تغییر"
