@@ -40,3 +40,13 @@ def book_update(request, pk):
 
     context = {'form': form}
     return render(request, 'bookstore/book_create.html', context)
+
+
+def book_delete(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    if request.method == 'POST':
+        book.delete()
+        return redirect('bookstore:book_list')
+
+    context = {'book': book}
+    return render(request, 'bookstore/book_delete.html', context)

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-17 18:02+0330\n"
-"PO-Revision-Date: 2023-04-17 18:06+0330\n"
+"POT-Creation-Date: 2023-04-17 18:52+0330\n"
+"PO-Revision-Date: 2023-04-17 18:53+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "مترجم کتاب"
 msgid "BookTranslators"
 msgstr "مترجم کتاب"
 
-#: .\bookstore\models.py:29 .\bookstore\models.py:61
+#: .\bookstore\models.py:29 .\bookstore\models.py:63
 msgid "publisher name"
 msgstr "ناشر کتاب"
 
@@ -51,7 +51,7 @@ msgstr "درباره ی ناشر"
 msgid "BookPublishers"
 msgstr "ناشر کتاب"
 
-#: .\bookstore\models.py:40 .\bookstore\models.py:68
+#: .\bookstore\models.py:40 .\bookstore\models.py:71
 msgid "book subject"
 msgstr "موضوع کتاب"
 
@@ -75,47 +75,52 @@ msgstr "عدم موجودی"
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\bookstore\models.py:62
+#: .\bookstore\models.py:61 .\templates\bookstore\book_list.html:13
+#| msgid "BookTranslators"
+msgid "book translator"
+msgstr "مترجم کتاب"
+
+#: .\bookstore\models.py:64
 msgid "publication year"
 msgstr "سال انتشار"
 
-#: .\bookstore\models.py:63
+#: .\bookstore\models.py:66
 msgid "book introduction"
 msgstr "معرفی کتاب"
 
-#: .\bookstore\models.py:64
+#: .\bookstore\models.py:67
 msgid "short description"
 msgstr "توضیحات کوتاه"
 
-#: .\bookstore\models.py:65
+#: .\bookstore\models.py:68
 msgid "book price"
 msgstr "قیمت کتاب"
 
-#: .\bookstore\models.py:66
+#: .\bookstore\models.py:69
 msgid "number of pages"
 msgstr "تعداد صفحات"
 
-#: .\bookstore\models.py:70
+#: .\bookstore\models.py:73
 msgid "status"
 msgstr "وضعیت"
 
-#: .\bookstore\models.py:71
+#: .\bookstore\models.py:74
 msgid "active status"
 msgstr "وضعیت فعال"
 
-#: .\bookstore\models.py:72
+#: .\bookstore\models.py:75
 msgid "book owner"
 msgstr "مالک کتاب"
 
-#: .\bookstore\models.py:74
+#: .\bookstore\models.py:77
 msgid "creation date"
 msgstr "تاریخ ایجاد"
 
-#: .\bookstore\models.py:75
+#: .\bookstore\models.py:78
 msgid "Modification date"
 msgstr "تاریخ اصلاح"
 
-#: .\bookstore\models.py:78
+#: .\bookstore\models.py:81
 msgid "Books"
 msgstr "کتاب ها"
 
@@ -124,7 +129,6 @@ msgid "Home"
 msgstr "خانه"
 
 #: .\templates\_base.html:14
-#| msgid "book lists"
 msgid "book list"
 msgstr "فهرست کتاب ها"
 
@@ -255,19 +259,45 @@ msgid "add your new book"
 msgstr "کتاب خود را اضافه کنید"
 
 #: .\templates\bookstore\book_create.html:13
-#| msgid "creation date"
 msgid "create"
 msgstr "ایجاد"
 
-#: .\templates\bookstore\book_detail.html:12
+#: .\templates\bookstore\book_delete.html:5
+#: .\templates\bookstore\book_delete.html:9
+#| msgid "new book"
+msgid "delete book"
+msgstr "حذف کتاب"
+
+#: .\templates\bookstore\book_delete.html:10
+msgid "Are you sure delete"
+msgstr "آیا مطمئن هستید برای حذف"
+
+#: .\templates\bookstore\book_delete.html:10
+#| msgid "book price"
+msgid "book premenently"
+msgstr "این کتاب"
+
+#: .\templates\bookstore\book_delete.html:13
+msgid "Yes"
+msgstr "بله"
+
+#: .\templates\bookstore\book_delete.html:14
+msgid "No"
+msgstr "خیر"
+
+#: .\templates\bookstore\book_detail.html:14
 msgid "Edit"
 msgstr "ویرایش"
+
+#: .\templates\bookstore\book_detail.html:15
+msgid "delete"
+msgstr "حذف"
 
 #: .\templates\bookstore\book_list.html:5
 msgid "book lists"
 msgstr "فهرست کتاب ها"
 
-#: .\templates\bookstore\book_list.html:15
+#: .\templates\bookstore\book_list.html:16
 msgid "ReadMore"
 msgstr "ادامه مطلب"
 

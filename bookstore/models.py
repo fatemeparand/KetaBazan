@@ -57,9 +57,12 @@ class Book(models.Model):
     book_name = models.CharField(max_length=200, verbose_name=_('book name'))
     book_author = models.ForeignKey(BookAuthor, on_delete=models.CASCADE, related_name='authors',
                                     verbose_name=_('book author'))
+    book_translator = models.ForeignKey(BookTranslator, on_delete=models.CASCADE, related_name='translator', blank=True,
+                                        verbose_name=_('book translator'))
     book_publisher = models.ForeignKey(BookPublisher, on_delete=models.CASCADE, related_name='publishers',
                                        verbose_name=_('publisher name'))
     publication_year = models.PositiveIntegerField(verbose_name=_('publication year'))
+
     book_introduction = models.TextField(verbose_name=_('book introduction'))
     short_description = models.CharField(max_length=500, blank=True, verbose_name=_('short description'))
     book_price = models.PositiveIntegerField(verbose_name=_('book price'))

@@ -1,0 +1,17 @@
+{% extends '_base.html'%}
+{% load i18n %}
+
+{% block page_title %}
+    KetaBazan/{% trans 'delete book' %}
+{% endblock %}
+
+{% block content %}
+    <h3>{% trans 'delete book' %} {{ book.book_name }}</h3>
+    <p>{% trans 'Are you sure delete' %}{{ book.book_name }} {% trans 'book premenently' %}</p>
+    <form action="" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">{% trans 'Yes' %}</button>
+    <a href="{{ book.get_absolute_url }}">{% trans 'No' %}</a>
+
+    </form>
+{% endblock %}
