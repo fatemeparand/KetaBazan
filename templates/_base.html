@@ -8,6 +8,14 @@
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body dir="rtl">
+
+    <p>
+        <a href="{% url 'pages:home_page' %}">{% trans 'Home' %}</a>
+        <a href="{% url 'bookstore:book_list' %}">{% trans 'book list' %}</a>
+        <a href="{% url 'bookstore:book_create' %}">{% trans 'new book' %}</a>
+    </p>
+
+
     {% if user.is_authenticated %}
         welcome {{ user.username }},
         <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>

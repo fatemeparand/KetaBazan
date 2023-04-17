@@ -12,7 +12,7 @@
         <h4>{% trans 'book author' %}: {{ book_list.book_author }}</h4>
         <small>{{ book_list.datetime_modified }}</small>
         <p>{{ book_list.book_introduction|linebreaksbr|truncatewords:50 }}</p>
-        <a href="{% url 'bookstore:book_detail' book_list.id %}">{% trans 'ReadMore' %}</a>
+        <a href="{{ book_list.get_absolute_url }}">{% trans 'ReadMore' %}</a>
 
         <hr>
     {% endfor %}

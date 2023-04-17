@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 
 class BookAuthor(models.Model):
@@ -78,3 +79,6 @@ class Book(models.Model):
 
     def __str__(self):
         return f"book introduction: {self.book_name}, {self.book_author}, {self.subject}"
+
+    def get_absolute_url(self):
+        return reverse('bookstore:book_detail', args={self.pk})
