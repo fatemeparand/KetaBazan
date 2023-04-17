@@ -9,6 +9,7 @@
     <h1><b>{{ book.book_name }}</b></h1>
     <h4>{{ book.book_author }}</h4>
     <p><small>publisher: {{ book.book_publisher }}</small></p>
+    <a href="{% url 'bookstore:book_update' book.id %}">{% trans 'Edit' %}</a>
     <p><small>publication year: {{ book.publication_year }}</small></p>
     <p><small>pages: {{ book.book_pages }}</small></p>
     <p><small>price: {{ book.book_price }}</small></p>

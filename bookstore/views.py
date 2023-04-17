@@ -29,3 +29,14 @@ def book_create(request):
 
     context = {'form': form}
     return render(request, 'bookstore/book_create.html', context)
+
+
+def book_update(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    form = BookCreationForm(request.POST or None, instance=book)
+    if form.is_valid():
+        form.save()
+        return redirect(book.get_absolute_url())
+
+    context = {'form': form}
+    return render(request, 'bookstore/book_create.html', context)
