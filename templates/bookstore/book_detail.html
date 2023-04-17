@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block page_title %}
+    KetaBazan/{{ book.book_name }}
+{% endblock %}
+
+{% block content %}
+    <h1><b>{{ book.book_name }}</b></h1>
+    <h4>{{ book.book_author }}</h4>
+    <p><small>publisher: {{ book.book_publisher }}</small></p>
+    <p><small>publication year: {{ book.publication_year }}</small></p>
+    <p><small>pages: {{ book.book_pages }}</small></p>
+    <p><small>price: {{ book.book_price }}</small></p>
+    <p><small>subject: {{ book.subject }}</small></p>
+    <br>
+    <p>{{ book.book_introduction|linebreaksbr }}</p>
+
+{% endblock %}

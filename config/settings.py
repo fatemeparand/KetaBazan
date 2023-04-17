@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # third_party_apps
     'crispy_forms',
     'crispy_bootstrap5',
+    'bootstrap4',
     'allauth',
     'allauth.account',
     'rosetta',
