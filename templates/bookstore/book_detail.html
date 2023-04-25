@@ -7,13 +7,16 @@
 
 {% block content %}
     <h1><b>{{ book.book_name }}</b></h1>
+    {% if book.owner == user %}
+        <p>
+            <a href="{% url 'bookstore:book_update' book.id %}">{% trans 'Edit' %}</a>
+            <a href="{% url 'bookstore:book_delete' book.id %}">{% trans 'delete' %}</a>
+        </p>
+    {% endif %}
+
     <h4>نویسنده: {{ book.book_author }}</h4>
     <h4>مترجم: {{ book.book_translator }}</h4>
     <p><small>انتشارات: {{ book.book_publisher }}</small></p>
-    <p>
-        <a href="{% url 'bookstore:book_update' book.id %}">{% trans 'Edit' %}</a>
-        <a href="{% url 'bookstore:book_delete' book.id %}">{% trans 'delete' %}</a>
-    </p>
 
     <p><small>سال انتشار: {{ book.publication_year }}</small></p>
     <p><small>تعداد صفحات: {{ book.book_pages }}</small></p>

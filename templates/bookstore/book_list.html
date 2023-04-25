@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block content %}
-    <p>
-        <a href="{% url 'bookstore:book_create' %}">{% trans 'new book' %}</a>
-    </p>
+    {% if user.is_authenticated %}
+        <p>
+            <a href="{% url 'bookstore:book_create' %}">{% trans 'new book' %}</a>
+        </p>
+
+    {% endif %}
 
     {% for book_list in book_lists %}
         <h1>{% trans 'book name' %}: {{ book_list.book_name }}</h1>

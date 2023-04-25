@@ -5,7 +5,7 @@ from django.urls import reverse
 
 
 class BookAuthor(models.Model):
-    author_name = models.CharField(max_length=200, verbose_name=_('book author'))
+    author_name = models.CharField(max_length=200, unique=True, verbose_name=_('book author'))
     biography = models.TextField(verbose_name=_('biography'), blank=True)
 
     class Meta:
@@ -16,7 +16,7 @@ class BookAuthor(models.Model):
 
 
 class BookTranslator(models.Model):
-    translator_name = models.CharField(max_length=200, verbose_name=_('translator name'))
+    translator_name = models.CharField(max_length=200, unique=True, verbose_name=_('translator name'))
 
     class Meta:
         verbose_name_plural = _('BookTranslators')
@@ -26,7 +26,7 @@ class BookTranslator(models.Model):
 
 
 class BookPublisher(models.Model):
-    publisher_name = models.CharField(max_length=200, verbose_name=_('publisher name'))
+    publisher_name = models.CharField(max_length=200, unique=True, verbose_name=_('publisher name'))
     short_description = models.CharField(max_length=500, blank=True, verbose_name=_('about publisher'))
 
     class Meta:
@@ -37,7 +37,7 @@ class BookPublisher(models.Model):
 
 
 class Subject(models.Model):
-    subject = models.CharField(verbose_name=_('book subject'))
+    subject = models.CharField(unique=True, verbose_name=_('book subject'))
 
     class Meta:
         verbose_name_plural = _('Subjects')
@@ -78,6 +78,7 @@ class Book(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Modification date'))
 
     class Meta:
+        unique_together = ['book_name', 'book_author', 'book_translator', 'book_publisher']
         verbose_name_plural = _('Books')
 
     def __str__(self):
