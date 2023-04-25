@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .forms import BookCreationForm
 from .models import Book
 
@@ -19,23 +21,24 @@ class BookDetail(generic.DetailView):
     template_name = 'bookstore/book_detail.html'
 
 
-class BookCreate(generic.CreateView):
+class BookCreate(LoginRequiredMixin, generic.CreateView):
     form_class = BookCreationForm
     context_object_name = 'form'
     template_name = 'bookstore/book_create.html'
 
 
-class BookUpdate(generic.UpdateView):
+class BookUpdate(LoginRequiredMixin, generic.UpdateView):
     model = Book
     form_class = BookCreationForm
     context_object_name = 'form'
     template_name = 'bookstore/book_create.html'
 
 
-class BookDelete(generic.DeleteView):
+class BookDelete(LoginRequiredMixin, generic.DeleteView):
     model = Book
     template_name = 'bookstore/book_delete.html'
     success_url = reverse_lazy('bookstore:book_list')
+
 
 
 # def book_list(request):

@@ -6,6 +6,9 @@
 {% endblock %}
 
 {% block content %}
+    <p>
+        <a href="{% url 'bookstore:book_create' %}">{% trans 'new book' %}</a>
+    </p>
 
     {% for book_list in book_lists %}
         <h1>{% trans 'book name' %}: {{ book_list.book_name }}</h1>

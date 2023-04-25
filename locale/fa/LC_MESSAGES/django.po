@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-17 18:52+0330\n"
-"PO-Revision-Date: 2023-04-17 18:53+0330\n"
+"POT-Creation-Date: 2023-04-25 17:18+0330\n"
+"PO-Revision-Date: 2023-04-25 17:21+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\bookstore\models.py:8 .\bookstore\models.py:59
-#: .\templates\bookstore\book_list.html:12
+#: .\templates\bookstore\book_list.html:15
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -71,12 +71,11 @@ msgstr "موجود"
 msgid "Not Available"
 msgstr "عدم موجودی"
 
-#: .\bookstore\models.py:57 .\templates\bookstore\book_list.html:11
+#: .\bookstore\models.py:57 .\templates\bookstore\book_list.html:14
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\bookstore\models.py:61 .\templates\bookstore\book_list.html:13
-#| msgid "BookTranslators"
+#: .\bookstore\models.py:61 .\templates\bookstore\book_list.html:16
 msgid "book translator"
 msgstr "مترجم کتاب"
 
@@ -132,21 +131,21 @@ msgstr "خانه"
 msgid "book list"
 msgstr "فهرست کتاب ها"
 
-#: .\templates\_base.html:15 .\templates\bookstore\book_create.html:5
-msgid "new book"
-msgstr "کتاب جدید"
+#: .\templates\_base.html:19
+msgid "welcome"
+msgstr "خوش آمدی"
 
-#: .\templates\_base.html:21
+#: .\templates\_base.html:20 .\templates\account\logout.html:5
 msgid "logout"
 msgstr "خروج"
 
-#: .\templates\_base.html:23 .\templates\account\login.html:7
+#: .\templates\_base.html:22 .\templates\account\login.html:7
 #: .\templates\account\login.html:14
 #: .\templates\account\password_reset_from_key_done.html:12
 msgid "login"
 msgstr "ورود"
 
-#: .\templates\_base.html:24 .\templates\account\signup.html:7
+#: .\templates\_base.html:23 .\templates\account\signup.html:7
 #: .\templates\account\signup.html:14
 msgid "signup"
 msgstr "ثبت نام"
@@ -196,6 +195,21 @@ msgid ""
 msgstr ""
 "\n"
 "لطفا ایمیل خود را تایید کنید\n"
+
+#: .\templates\account\logout.html:9
+#| msgid "Are you sure delete"
+msgid "Are you sure to leave the site?"
+msgstr "برای خروج از سایت مطمئن هستید؟"
+
+#: .\templates\account\logout.html:12
+#: .\templates\bookstore\book_delete.html:13
+msgid "Yes"
+msgstr "بله"
+
+#: .\templates\account\logout.html:13
+#: .\templates\bookstore\book_delete.html:14
+msgid "No"
+msgstr "خیر"
 
 #: .\templates\account\password_change.html:7
 #: .\templates\account\password_change.html:14
@@ -254,6 +268,11 @@ msgstr "رمز عبور جدید شما تنظیم شده است."
 msgid "You can login with your new password now"
 msgstr "اکنون می توانید با رمز عبور جدید خود وارد شوید"
 
+#: .\templates\bookstore\book_create.html:5
+#: .\templates\bookstore\book_list.html:10
+msgid "new book"
+msgstr "کتاب جدید"
+
 #: .\templates\bookstore\book_create.html:9
 msgid "add your new book"
 msgstr "کتاب خود را اضافه کنید"
@@ -264,7 +283,6 @@ msgstr "ایجاد"
 
 #: .\templates\bookstore\book_delete.html:5
 #: .\templates\bookstore\book_delete.html:9
-#| msgid "new book"
 msgid "delete book"
 msgstr "حذف کتاب"
 
@@ -273,17 +291,8 @@ msgid "Are you sure delete"
 msgstr "آیا مطمئن هستید برای حذف"
 
 #: .\templates\bookstore\book_delete.html:10
-#| msgid "book price"
 msgid "book premenently"
 msgstr "این کتاب"
-
-#: .\templates\bookstore\book_delete.html:13
-msgid "Yes"
-msgstr "بله"
-
-#: .\templates\bookstore\book_delete.html:14
-msgid "No"
-msgstr "خیر"
 
 #: .\templates\bookstore\book_detail.html:14
 msgid "Edit"
@@ -297,7 +306,7 @@ msgstr "حذف"
 msgid "book lists"
 msgstr "فهرست کتاب ها"
 
-#: .\templates\bookstore\book_list.html:16
+#: .\templates\bookstore\book_list.html:19
 msgid "ReadMore"
 msgstr "ادامه مطلب"
 
