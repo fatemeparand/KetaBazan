@@ -74,7 +74,7 @@ class Book(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, max_length=13, verbose_name=_('status'))
     active = models.BooleanField(default=True, verbose_name=_('active status'))
     owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name=_('book owner'))
-    book_cover = models.ImageField(verbose_name=_('book cover'), upload_to='book_cover/', blank=True)
+    image = models.ImageField(upload_to='book image/', blank=True, verbose_name=_('book image'))
 
     datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('creation date'))
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Modification date'))

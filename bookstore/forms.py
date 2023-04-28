@@ -18,7 +18,5 @@ class BookCreationForm(forms.ModelForm):
                   'status',
                   'active',
                   'owner',
-                  'book_cover',
+                  'image',
                   ]
-
-
