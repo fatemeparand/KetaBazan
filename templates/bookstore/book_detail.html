@@ -15,7 +15,11 @@
     {% endif %}
 
     <h4>نویسنده: {{ book.book_author }}</h4>
-    <h4>مترجم: {{ book.book_translator }}</h4>
+
+    {% if book.book_translator %}
+        <h4>مترجم: {{ book.book_translator }}</h4>
+    {% endif %}
+
     <p><small>انتشارات: {{ book.book_publisher }}</small></p>
 
     <p><small>سال انتشار: {{ book.publication_year }}</small></p>

@@ -14,12 +14,17 @@
     {% endif %}
 
     {% for book_list in book_lists %}
-        <h1>{% trans 'book name' %}: {{ book_list.book_name }}</h1>
+        <h1>{{ book_list.book_name }}</h1>
         <h4>{% trans 'book author' %}: {{ book_list.book_author }}</h4>
-        <h4>{% trans 'book translator' %}: {{ book_list.book_translator }}</h4>
+
+        {% if book_list.book_translator %}
+            <h4>{% trans 'book translator' %}: {{ book_list.book_translator }}</h4>
+        {% endif %}
+
         <small>{{ book_list.datetime_modified }}</small>
         <p>{{ book_list.book_introduction|linebreaksbr|truncatewords:50 }}</p>
         <a href="{{ book_list.get_absolute_url }}">{% trans 'ReadMore' %}</a>
+        
 
         <hr>
     {% endfor %}
