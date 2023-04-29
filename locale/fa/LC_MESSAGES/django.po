@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-28 19:11+0330\n"
-"PO-Revision-Date: 2023-04-28 19:17+0330\n"
+"POT-Creation-Date: 2023-04-29 18:17+0330\n"
+"PO-Revision-Date: 2023-04-29 18:19+0330\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
 #: .\bookstore\models.py:8 .\bookstore\models.py:60
-#: .\templates\bookstore\book_list.html:100
+#: .\templates\bookstore\book_list.html:102
 msgid "book author"
 msgstr "نویسنده کتاب"
 
@@ -59,9 +59,9 @@ msgstr "ناشر کتاب"
 msgid "book subject"
 msgstr "موضوع کتاب"
 
-#: .\bookstore\models.py:44
+#: .\bookstore\models.py:44 .\templates\_base.html:313
 msgid "Subjects"
-msgstr "موضوع کتاب"
+msgstr "موضوعات"
 
 #: .\bookstore\models.py:52
 msgid "Preparing"
@@ -79,7 +79,7 @@ msgstr "عدم موجودی"
 msgid "book name"
 msgstr "نام کتاب"
 
-#: .\bookstore\models.py:62 .\templates\bookstore\book_list.html:103
+#: .\bookstore\models.py:62 .\templates\bookstore\book_list.html:105
 msgid "book translator"
 msgstr "مترجم کتاب"
 
@@ -115,20 +115,19 @@ msgstr "وضعیت فعال"
 msgid "book owner"
 msgstr "مالک کتاب"
 
-#: .\bookstore\models.py:78
-#| msgid "book name"
+#: .\bookstore\models.py:77
 msgid "book image"
 msgstr "عکس کتاب"
 
-#: .\bookstore\models.py:80
+#: .\bookstore\models.py:79
 msgid "creation date"
 msgstr "تاریخ ایجاد"
 
-#: .\bookstore\models.py:81
+#: .\bookstore\models.py:80
 msgid "Modification date"
 msgstr "تاریخ اصلاح"
 
-#: .\bookstore\models.py:85
+#: .\bookstore\models.py:84 .\templates\_base.html:158
 msgid "Books"
 msgstr "کتاب ها"
 
@@ -155,7 +154,26 @@ msgstr "ورود"
 msgid "signup"
 msgstr "ثبت نام"
 
-#: .\templates\_base.html:157
+#: .\templates\_base.html:151
+msgid "Main Page"
+msgstr "صفحه اصلی"
+
+#: .\templates\_base.html:238
+#| msgid "BookAuthors"
+msgid "Authors"
+msgstr "نویسنده ها"
+
+#: .\templates\_base.html:268
+#| msgid "BookTranslators"
+msgid "Translators"
+msgstr "مترجمان"
+
+#: .\templates\_base.html:288
+#| msgid "BookPublishers"
+msgid "Publishers"
+msgstr "ناشران"
+
+#: .\templates\_base.html:428
 msgid "all rights reserved"
 msgstr "تمامی حقوق محفوظ است."
 
@@ -318,15 +336,15 @@ msgstr "حذف"
 msgid "book lists"
 msgstr "فهرست کتاب ها"
 
-#: .\templates\bookstore\book_list.html:63
+#: .\templates\bookstore\book_list.html:65
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\bookstore\book_list.html:65
+#: .\templates\bookstore\book_list.html:67
 msgid "Add to cart"
 msgstr "اضافه کردن به سبد خرید"
 
-#: .\templates\bookstore\book_list.html:108
+#: .\templates\bookstore\book_list.html:110
 msgid "ReadMore"
 msgstr "ادامه مطلب"
 
