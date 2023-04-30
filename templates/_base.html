@@ -30,6 +30,17 @@
 </head>
 <body dir="rtl">
 
+<!-- Preloader Start -->
+<div class="ShoppingYar-preloader active">
+    <div class="ShoppingYar-preloader-inner h-100 d-flex align-items-center justify-content-center">
+        <div class="ShoppingYar-child ShoppingYar-bounce1"></div>
+        <div class="ShoppingYar-child ShoppingYar-bounce2"></div>
+        <div class="ShoppingYar-child zuka-bounce3"></div>
+    </div>
+</div>
+<!-- Preloader End -->
+
+
 <!-- Main Wrapper Start -->
 <div class="wrapper">
     <!-- Header Start -->
@@ -123,18 +134,8 @@
     </header>
     <!-- Header End -->
 
-    {% if user.is_authenticated %}
-        {% trans 'welcome' %} {{ user.username }},
-        <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
-    {% else %}
-        <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
-        <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
-    {% endif %}
-
-    <div class="container mt-4">
+    <div class="container mt-2">
         <div class="row">
-
-
             <!--Sidebar Start-->
             <div class="col-2" dir="rtl">
 
@@ -266,20 +267,20 @@
                                     <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse"
                                        href="#">
                                         <i class="bi bi-layout-text-window-reverse"></i><span>{% trans 'Translators' %}</span>
-                                            <i class="bi bi-chevron-down ms-auto"></i>
+                                        <i class="bi bi-chevron-down ms-auto"></i>
                                     </a>
-{#                                    <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">#}
-{#                                        <li>#}
-{#                                            <a href="tables-general.html" class="active">#}
-{#                                                <i class="bi bi-circle"></i><span>General Tables</span>#}
-{#                                            </a>#}
-{#                                        </li>#}
-{#                                        <li>#}
-{#                                            <a href="tables-data.html">#}
-{#                                                <i class="bi bi-circle"></i><span>Data Tables</span>#}
-{#                                            </a>#}
-{#                                        </li>#}
-{#                                    </ul>#}
+                                    {#                                    <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">#}
+                                    {#                                        <li>#}
+                                    {#                                            <a href="tables-general.html" class="active">#}
+                                    {#                                                <i class="bi bi-circle"></i><span>General Tables</span>#}
+                                    {#                                            </a>#}
+                                    {#                                        </li>#}
+                                    {#                                        <li>#}
+                                    {#                                            <a href="tables-data.html">#}
+                                    {#                                                <i class="bi bi-circle"></i><span>Data Tables</span>#}
+                                    {#                                            </a>#}
+                                    {#                                        </li>#}
+                                    {#                                    </ul>#}
                                 </li><!-- End Tables Nav -->
 
                                 <li class="nav-item">
@@ -403,44 +404,51 @@
     </div>
 </div>
 
+{% if user.is_authenticated %}
+    {% trans 'welcome' %} {{ user.username }},
+    <a href="{% url 'account_logout' %}">{% trans 'logout' %}</a>
+{% else %}
+    <a href="{% url 'account_login' %}">{% trans 'login' %}</a>
+    <a href="{% url 'account_signup' %}">{% trans 'signup' %}</a>
+{% endif %}
 
 
-            <!-- Footer Start-->
-            <footer class="footer">
-                <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-9 text-center">
-                                <div class="footer-widget mb--50">
-                                    <div class="textwidget">
-                                        <img src="{% static 'img/KetaBazan_logo.png' %}"
-                                             style="max-height: 180px;" alt="Logo">
-                                    </div>
-                                </div>
-                                <div class="footer-widget mb--50 pb--1">
-                                    <ul class="footer-menu">
-                                        <li><a href="">درباره ما</a></li>
-                                        <li><a href="">قوانین و مقررات</a></li>
-                                        <li><a href="">تماس با ما</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-widget">
-                                    KetaBazan.com © | {% trans 'all rights reserved' %}
-                                </div>
-                            </div>
+<!-- Footer Start-->
+<footer class="footer">
+    <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <div class="footer-widget mb--50">
+                        <div class="textwidget">
+                            <img src="{% static 'img/KetaBazan_logo.png' %}"
+                                 style="max-height: 180px;" alt="Logo">
                         </div>
                     </div>
+                    <div class="footer-widget mb--50 pb--1">
+                        <ul class="footer-menu">
+                            <li><a href="">درباره ما</a></li>
+                            <li><a href="">قوانین و مقررات</a></li>
+                            <li><a href="">تماس با ما</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-widget">
+                        KetaBazan.com © | {% trans 'all rights reserved' %}
+                    </div>
                 </div>
-            </footer>
-            <!-- Footer End-->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer End-->
 
-            <!-- ************************* JS Files ************************* -->
+<!-- ************************* JS Files ************************* -->
 
-            <!-- jQuery JS -->
-            <script src="{% static 'js/vendor.js' %}"></script>
+<!-- jQuery JS -->
+<script src="{% static 'js/vendor.js' %}"></script>
 
-            <!-- Main JS -->
-            <script src="{% static 'js/main.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
 
 
 </body>
