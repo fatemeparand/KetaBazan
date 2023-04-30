@@ -48,11 +48,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rosetta',
+    'rest_framework',
 
     # my_apps
     'accounts',
     'pages',
     'bookstore',
+    'api',
 ]
 
 SITE_ID = 1

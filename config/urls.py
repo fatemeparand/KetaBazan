@@ -29,6 +29,10 @@ urlpatterns = [
     # django_rosetta
     path('rosetta/', include('rosetta.urls')),
 
+    # drf
+    path('api/v1/api-auth', include('rest_framework.urls')),
+    path('api/v1/', include('api.urls')),
+
 ] + static(settings.MEDIA_URL,
            document_root=settings.MEDIA_ROOT,
            )
