@@ -6,6 +6,12 @@ from django.contrib.auth import get_user_model
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
+        fields = ('id', 'book_name', 'book_author', 'book_price')
+
+
+class BookDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
         exclude = ('datetime_created', 'datetime_modified')
 
 
