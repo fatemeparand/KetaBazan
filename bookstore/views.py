@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
-from .forms import BookCreationForm
-from .models import Book
+from .forms import BookCreationForm, CommentForm
+from .models import Book, Comment
 
 
 class BookList(generic.ListView):
@@ -19,6 +19,24 @@ class BookDetail(generic.DetailView):
     model = Book
     context_object_name = 'book'
     template_name = 'bookstore/book_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['comment_form'] = CommentForm()
+        return context
+
+
+class CommentCreate(generic.CreateView):
+    model = Comment
+    form_class = CommentForm
+
+    def form_valid(self, form):
+        new_comment = form.save(commit=False)
+        new_comment.author = self.request.user
+        book_id = int(self.kwargs['pk'])
+        book = get_object_or_404(Book, id=book_id)
+        new_comment.book = book
+        return super().form_valid(form)
 
 
 class BookCreate(LoginRequiredMixin, generic.CreateView):
@@ -39,7 +57,7 @@ class BookUpdate(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
         return obj.owner == self.request.user
 
 
-class BookDelete(LoginRequiredMixin,UserPassesTestMixin, generic.DeleteView):
+class BookDelete(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = Book
     template_name = 'bookstore/book_delete.html'
     success_url = reverse_lazy('bookstore:book_list')
@@ -47,7 +65,6 @@ class BookDelete(LoginRequiredMixin,UserPassesTestMixin, generic.DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.owner == self.request.user
-
 
 # from django.contrib.auth.decorators import login_required
 # def book_list(request):

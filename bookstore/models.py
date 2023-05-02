@@ -56,12 +56,26 @@ class Book(models.Model):
     )
 
     book_name = models.CharField(max_length=200, verbose_name=_('book name'))
-    book_author = models.ForeignKey(BookAuthor, on_delete=models.CASCADE, related_name='authors',
-                                    verbose_name=_('book author'))
-    book_translator = models.ForeignKey(BookTranslator, on_delete=models.CASCADE, related_name='translator', blank=True,
-                                        null=True, verbose_name=_('book translator'))
-    book_publisher = models.ForeignKey(BookPublisher, on_delete=models.CASCADE, related_name='publishers',
-                                       verbose_name=_('publisher name'))
+    book_author = models.ForeignKey(
+        BookAuthor,
+        on_delete=models.CASCADE,
+        related_name='authors',
+        verbose_name=_('book author')
+    )
+    book_translator = models.ForeignKey(
+        BookTranslator,
+        on_delete=models.CASCADE,
+        related_name='translator',
+        blank=True,
+        null=True,
+        verbose_name=_('book translator')
+    )
+    book_publisher = models.ForeignKey(
+        BookPublisher,
+        on_delete=models.CASCADE,
+        related_name='publishers',
+        verbose_name=_('publisher name')
+    )
     publication_year = models.PositiveIntegerField(verbose_name=_('publication year'))
 
     book_introduction = models.TextField(verbose_name=_('book introduction'))
@@ -88,3 +102,32 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse('bookstore:book_detail', args={self.pk})
+
+
+class Comment(models.Model):
+    book = models.ForeignKey(
+        Book,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('book')
+    )
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name=_('comment author')
+    )
+    body = models.TextField(verbose_name=_('comment text'))
+
+    datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('time created'))
+    active = models.BooleanField(default=True, verbose_name=_('active status'))
+
+    class Meta:
+        verbose_name_plural = _('Comments')
+        ordering = ('-datetime_created',)
+
+    def __str__(self):
+        return f'{self.author}: {self.body}'
+
+    def get_absolute_url(self):
+        return reverse('bookstore:book_detail', args=[self.book.id])

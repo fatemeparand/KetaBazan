@@ -21,7 +21,7 @@ class ApiBookDetail(RetrieveUpdateDestroyAPIView):
 
 class ApiUserList(ListAPIView):
     serializer_class = UserSerializer
-    permission_classes = (IsSuperUserOrStaffReadOnly)
+    permission_classes = (IsSuperUserOrStaffReadOnly,)
 
     def get_queryset(self):
         return CustomUser.objects.order_by('date_joined')

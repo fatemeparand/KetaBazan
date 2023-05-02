@@ -1,5 +1,6 @@
 from django import forms
-from .models import Book
+from .models import Book, Comment
+from django.utils.translation import gettext_lazy as _
 
 
 class BookCreationForm(forms.ModelForm):
@@ -20,3 +21,10 @@ class BookCreationForm(forms.ModelForm):
                   'owner',
                   'image',
                   ]
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['body', ]
+

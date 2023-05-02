@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +31,9 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls')),
 
     # drf
-    path('api/v1/api-auth', include('rest_framework.urls')),
+    # path('api/v1/api-auth', include('rest_framework.urls')),
+    path('api/v1/auth-token/', obtain_auth_token),
+    path('api/v1/rest-auth/', include('dj_rest_auth.urls')),
     path('api/v1/', include('api.urls')),
 
 ] + static(settings.MEDIA_URL,
